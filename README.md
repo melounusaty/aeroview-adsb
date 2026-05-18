@@ -1,4 +1,4 @@
-# AeroViewADSB
+# AeroViewADSB - UNSTABLE CONCEPT
 
 AeroViewADSB is a Home Assistant custom integration for displaying live aircraft data from a local ADS-B feeder. It enriches aircraft with a local aircraft database for registration, short type code, and long type description, plus ICAO-range country and flag mapping.
 
