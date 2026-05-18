@@ -1,0 +1,31 @@
+{
+  "title": "AeroViewADSB",
+  "config": {
+    "step": {
+      "user": {
+        "data": {
+          "host": "Host",
+          "port": "Port",
+          "scan_interval": "Update interval (seconds)",
+          "home_latitude": "Home latitude (optional)",
+          "home_longitude": "Home longitude (optional)"
+        }
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Only one AeroViewADSB instance is allowed."
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to ADSB feeder."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Update interval (seconds)"
+        }
+      }
+    }
+  }
+}
