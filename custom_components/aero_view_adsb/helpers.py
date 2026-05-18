@@ -99,7 +99,7 @@ def load_icao_ranges_from_js(hass: HomeAssistant):
         except Exception as e:
             _LOGGER.debug("Skipping malformed flags.js entry: %s", e)
 
-    _LOGGER.warning("AeroViewADSB parsed %d ICAO ranges from flags.js", len(ranges))
+    _LOGGER.debug("AeroViewADSB parsed %d ICAO ranges from flags.js", len(ranges))
     return ranges
 
 

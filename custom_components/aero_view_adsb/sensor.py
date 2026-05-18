@@ -144,7 +144,7 @@ class AeroViewADSBMasterSensor(CoordinatorEntity, SensorEntity):
 
             result["aircraft"].append(row)
 
-        _LOGGER.warning(
+        _LOGGER.debug(
             "AeroViewADSB flag matches this refresh: %d of %d aircraft",
             matched,
             len(result["aircraft"]),
