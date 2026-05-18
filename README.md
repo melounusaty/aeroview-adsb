@@ -1,6 +1,6 @@
 # AeroViewADSB
 
-AeroViewADSB is a Home Assistant custom integration for displaying live aircraft data from a local ADS-B feeder, enriched with a local aircraft database for registration, type code, and long type description, plus ICAO-range country/flag mapping.
+AeroViewADSB is a Home Assistant custom integration for displaying live aircraft data from a local ADS-B feeder. It enriches aircraft with a local aircraft database for registration, short type code, and long type description, plus ICAO-range country and flag mapping.
 
 It consists of:
 
@@ -17,8 +17,8 @@ It consists of:
 - Exposes a Home Assistant sensor with aircraft data as attributes.
 - Enriches aircraft with:
   - registration (`reg`)
-  - short type (`t`)
-  - long type (`desc`)
+  - short type code (`t`)
+  - long type description (`desc`)
   - country
   - flag image
   - distance from home
@@ -34,9 +34,13 @@ custom_components/
   aero_view_adsb/
     __init__.py          # Integration setup, data coordinator, data loading
     const.py             # Domain and config constants
+    config_flow.py       # Config and options flow
     helpers.py           # aircraft DB + ICAO range loading
     sensor.py            # Main sensor entity and aircraft attribute enrichment
     manifest.json        # Home Assistant integration metadata
+    brand/
+      icon.png           # Brand icon used by HACS / Home Assistant branding
+      logo.png           # Optional brand logo
 
 www/
   lovelace-card/
@@ -51,7 +55,7 @@ custom_components/aero_view_adsb/data/
 
 ## How it works
 
-1. Home Assistant polls the feeder JSON endpoint:
+1. Home Assistant polls the feeder JSON endpoint, for example:
    - `http://HOST:PORT/data/aircraft.json`
 
 2. The integration loads the local aircraft database from:
@@ -128,6 +132,23 @@ Restart Home Assistant after copying the files and adding the resource.
 
 ### 5. Add the integration
 Add the AeroViewADSB integration from the Home Assistant UI and configure the feeder host, port, and optional home location.
+
+---
+
+## HACS installation
+
+AeroViewADSB can also be installed through HACS as a custom repository.
+
+### Add the repository
+1. Open **HACS** in Home Assistant.
+2. Go to **Integrations**.
+3. Click the **three dots** in the top right corner.
+4. Select **Custom repositories**.
+5. Paste the repository URL.
+6. Select **Integration** as the type.
+7. Click **ADD**.
+
+If the repository is listed in HACS, it will then appear in the integrations store and can be installed from there.
 
 ---
 
