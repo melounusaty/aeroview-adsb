@@ -2,6 +2,9 @@
 
 A local Home Assistant integration for receiving live aircraft data from an ADS-B feeder and exposing it as a sensor entity, along with a Lovelace table card for viewing and enriching the aircraft list.
 
+<img width="1598" height="377" alt="image" src="https://github.com/user-attachments/assets/e777f32d-d566-4fee-912f-386ccc9054d5" />
+
+
 ## Overview
 
 AeroViewADSB connects Home Assistant to a local ADS-B data source and creates a master sensor that contains the current aircraft list as attributes.
