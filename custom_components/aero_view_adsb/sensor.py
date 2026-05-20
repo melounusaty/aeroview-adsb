@@ -3,8 +3,8 @@
 import logging
 
 from homeassistant.components.sensor import SensorEntity
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
 from homeassistant.const import CONF_LATITUDE, CONF_LONGITUDE
+from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 
@@ -33,11 +33,12 @@ def find_country_and_flag(hex_str, ranges):
 
 class AeroViewADSBMasterSensor(CoordinatorEntity, SensorEntity):
     _attr_translation_key = "current_aircraft"
+    _attr_name = "AeroView ADSB Master Aircraft"
 
     def __init__(self, coordinator, entry_id):
         super().__init__(coordinator)
         self._entry_id = entry_id
-        self._attr_unique_id = f"{entry_id}_master_aircraft"
+        self._attr_unique_id = "aero_view_adsb_master_aircraft"
 
     @property
     def native_value(self):
