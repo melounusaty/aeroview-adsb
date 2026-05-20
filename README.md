@@ -24,6 +24,12 @@ Copy the integration files into your Home Assistant `config/custom_components/ae
 After restart, add the integration through the Home Assistant UI using the config flow.
 The card JavaScript should be added to your Lovelace resources as a custom card.
 
+### Move flags to config/www/... and add dashboard resource
+
+Move the card and flag assets from the repository `www` folder into `config/www/aero_view_adsb/`, then add the card to Lovelace under **Settings → Dashboards → Resources** using `/local/aero_view_adsb/plane_list_card.js` as a JavaScript module.
+
+
+
 ## Configuration
 
 During setup, the integration asks for:
